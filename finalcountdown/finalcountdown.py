@@ -19,9 +19,11 @@ class FinalCountdown:
     self.finaldate = finaldate
 
     # Initialize AppIndicator
+    folder = os.path.dirname(os.path.abspath(__file__))
+    icon = os.path.join(folder, 'icon.svg')
     self.indicator = appindicator.Indicator.new (
       "countdown",
-      os.path.abspath('icon.svg'),
+      icon,
       appindicator.IndicatorCategory.OTHER
     )
     self.indicator.set_status (appindicator.IndicatorStatus.ACTIVE)
